@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica para que la página use caracteres en español y se adapte al celular. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio escolar para informar, prevenir y combatir el bullying y el acoso escolar.">
+    <title>Contáctanos | Alto al Bullying</title>
+    <!-- Las cuatro páginas comparten esta misma hoja de estilos externa. -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ENCABEZADO: el logo se muestra redondo y junto al nombre del sitio. -->
+    <header class="encabezado">
+        <div class="marca">
+            <!-- Cambia img/logo.png si deseas usar otro archivo de logo. -->
+            <img class="logo" src="img/logo.png" alt="Logotipo de Panteras STEAM CBTA 197">
+            <div class="marca-texto">
+                <p class="institucion">CBTA 197 · PANTERAS STEAM</p>
+                <a class="nombre-sitio" href="index.html">Alto al Bullying</a>
+                <p class="eslogan">Tu espacio, tu voz, tu respeto.</p>
+            </div>
+        </div>
+
+        <!-- MENÚ PRINCIPAL: los mismos enlaces aparecen en las cuatro páginas. -->
+        <nav class="menu" aria-label="Menú principal">
+                <a href="index.html" class="" >Inicio</a>
+                <a href="informacion.html" class="" >Información</a>
+                <a href="participa.html" class="" >Participa</a>
+                <a href="contacto.html" class="actual" aria-current="page">Contáctanos</a>
+        </nav>
+    </header>
+    <main>
+        <!-- ENCABEZADO DE CONTACTO. -->
+        <section class="titulo-pagina">
+            <p class="sobrelinea">TE LEEMOS</p>
+            <h1>Contáctanos</h1>
+            <p>Déjanos un comentario, una reflexión o una idea para promover el respeto en nuestra escuela.</p>
+        </section>
+
+        <!-- DISTRIBUCIÓN EN DOS COLUMNAS: información y formulario. -->
+        <section class="seccion dos-columnas contacto-layout">
+            <article class="tarjeta contacto-info">
+                <h2>Hablemos del respeto</h2>
+                <p>Este espacio es para compartir opiniones relacionadas con la prevención del acoso escolar.</p>
+                <p>Si tú o alguien que conoces está viviendo una situación de acoso, busca apoyo de un docente, orientador, familiar o persona adulta de confianza. Si existe peligro inmediato, pide ayuda presencial a un adulto o a los servicios de emergencia de tu localidad.</p>
+                <div class="aviso">
+                    <strong>Recuerda:</strong> no necesitas resolverlo todo por tu cuenta. Escuchar y pedir apoyo puede ser un primer paso.
+                </div>
+            </article>
+
+            <!-- FORMULARIO 3: utiliza text, email, select y textarea, cada uno con su label.
+                 action="#" cumple la indicación escolar; no envía ni almacena datos en GitHub Pages. -->
+            <form class="formulario" action="#" method="get">
+                <h2>Escribe tu comentario</h2>
+                <label for="nombre-contacto">Nombre</label>
+                <input type="text" id="nombre-contacto" name="nombre" placeholder="Escribe tu nombre" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="">Elige una opción</option>
+                    <option value="comentario">Comentario</option>
+                    <option value="reflexion">Reflexión</option>
+                    <option value="propuesta">Propuesta para la escuela</option>
+                    <option value="pregunta">Pregunta sobre el tema</option>
+                </select>
+
+                <label for="comentario">Tu comentario</label>
+                <textarea id="comentario" name="comentario" rows="7" placeholder="Escribe aquí tu mensaje..." required></textarea>
+
+                <button type="submit">Enviar comentario</button>
+                <p class="nota-formulario">Formulario de demostración: no envía mensajes reales ni guarda tus datos.</p>
+            </form>
+        </section>
+
+        <!-- FUENTES: se incluyen al final del contenido para que el visitante pueda consultar más información. -->
+        <section class="seccion fuentes-detalle">
+            <h2>Fuentes de información</h2>
+            <ul>
+                <li><a href="https://www.unicef.org/" target="_blank" rel="noopener noreferrer">UNICEF</a> — información sobre derechos, bienestar y protección de niñas, niños y adolescentes.</li>
+                <li><a href="https://www.unesco.org/" target="_blank" rel="noopener noreferrer">UNESCO</a> — recursos sobre educación y violencia en el ámbito escolar.</li>
+                <li><a href="https://www.gob.mx/sep" target="_blank" rel="noopener noreferrer">Secretaría de Educación Pública</a> — información institucional del sector educativo.</li>
+            </ul>
+        </section>
+    </main>
+    <!-- AVISO DE AYUDA: aparece antes del footer en las cuatro páginas. -->
+    <section class="linea-ayuda" aria-label="Información de ayuda">
+        <p>¿Necesitas hablar con alguien o pedir orientación?</p>
+        <h2>LLAMA A LA LÍNEA DE LA VIDA</h2>
+        <a href="tel:8009112000" class="telefono">800 911 2000</a>
+        <p>No tienes que enfrentar una situación difícil en soledad. Busca también apoyo de una persona adulta de confianza.</p>
+    </section>
+    <!-- PIE DE PÁGINA: completa tu nombre y conserva las fuentes consultadas. -->
+    <footer class="footer">
+      <p><strong>Alto al Bullying · CBTA 197</strong></p>
+        <p>Elaborado por: <strong>Daniell Alely Ochoa Galvez, Daniela Garcia Rojas y Regina Valeria Peraza Martinez.</strong> · Grupo:3-ATP</p>
+        <p class="fuentes">Fuentes de consulta: UNICEF · UNESCO · Secretaría de Educación Pública.</p>
+        <p>Proyecto escolar informativo · 2026</p>
+    </footer>
+</body>
+</html>

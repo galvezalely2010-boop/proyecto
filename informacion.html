@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica para que la página use caracteres en español y se adapte al celular. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio escolar para informar, prevenir y combatir el bullying y el acoso escolar.">
+    <title>Información | Alto al Bullying</title>
+    <!-- Las cuatro páginas comparten esta misma hoja de estilos externa. -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ENCABEZADO: el logo se muestra redondo y junto al nombre del sitio. -->
+    <header class="encabezado">
+        <div class="marca">
+            <!-- Cambia img/logo.png si deseas usar otro archivo de logo. -->
+            <img class="logo" src="img/logo.png" alt="Logotipo de Panteras STEAM CBTA 197">
+            <div class="marca-texto">
+                <p class="institucion">CBTA 197 · PANTERAS STEAM</p>
+                <a class="nombre-sitio" href="index.html">Alto al Bullying</a>
+                <p class="eslogan">Tu espacio, tu voz, tu respeto.</p>
+            </div>
+        </div>
+
+        <!-- MENÚ PRINCIPAL: los mismos enlaces aparecen en las cuatro páginas. -->
+        <nav class="menu" aria-label="Menú principal">
+                <a href="index.html" class="" >Inicio</a>
+                <a href="informacion.html" class="actual" aria-current="page">Información</a>
+                <a href="participa.html" class="" >Participa</a>
+                <a href="contacto.html" class="" >Contáctanos</a>
+        </nav>
+    </header>
+    <main>
+        <!-- TÍTULO PRINCIPAL: solo debe existir un h1 en esta página. -->
+        <section class="titulo-pagina">
+            <p class="sobrelinea">CONOCE · IDENTIFICA · PREVIENE</p>
+            <h1>Información sobre el bullying</h1>
+            <p>Comprender el acoso escolar es el primer paso para poder actuar.</p>
+        </section>
+
+        <!-- SECCIÓN 1: definición explicada con palabras sencillas. -->
+        <section class="seccion contenido-info">
+            <article class="tarjeta">
+                <h2>1. ¿Qué es el bullying?</h2>
+                <p>El bullying o acoso escolar es una forma de violencia que ocurre entre estudiantes. Se caracteriza por conductas agresivas que se repiten y en las que existe una desigualdad de poder, por lo que a la persona que las recibe puede resultarle difícil defenderse.</p>
+                <p>No es lo mismo que un desacuerdo ocasional entre compañeros: el acoso implica una conducta dañina que se mantiene en el tiempo.</p>
+            </article>
+
+            <!-- SECCIÓN 2: ejemplos de formas en las que puede presentarse. -->
+            <!-- Cada tipo de acoso tiene su propia tarjeta para que se distinga fácilmente. -->
+            <section class="bloque-tipos">
+                <h2>2. Tipos de acoso escolar</h2>
+                <div class="rejilla-tarjetas">
+                    <article class="tarjeta tipo-tarjeta"><h3>Bullying físico</h3><p>Incluye empujar, golpear o dañar las pertenencias de otra persona.</p></article>
+                    <article class="tarjeta tipo-tarjeta"><h3>Bullying verbal</h3><p>Consiste en insultar, poner apodos ofensivos o amenazar.</p></article>
+                    <article class="tarjeta tipo-tarjeta"><h3>Bullying social</h3><p>Ocurre al excluir intencionalmente, difundir rumores o aislar a alguien.</p></article>
+                    <article class="tarjeta tipo-tarjeta"><h3>Ciberacoso</h3><p>Se realiza mediante mensajes, redes o plataformas digitales para hostigar, humillar o amenazar.</p></article>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: consecuencias y acciones de apoyo. -->
+            <article class="tarjeta">
+                <h2>3. Consecuencias y cómo actuar</h2>
+                <p>El acoso puede afectar el bienestar emocional, la confianza, las amistades y el desempeño escolar de quien lo vive. También perjudica el ambiente de todo el grupo.</p>
+                <p>Si observas una situación de acoso, evita participar o compartir burlas, escucha sin juzgar, acompaña a la persona y comunícalo a un docente, orientador o adulto de confianza. No intentes resolver una situación peligrosa por tu cuenta.</p>
+            </article>
+        </section>
+
+        <!-- FORMULARIO 1: trivia de cuatro preguntas con botones radio.
+             Cada grupo comparte el mismo name para permitir elegir una respuesta por pregunta. -->
+        <section class="seccion">
+            <div class="encabezado-seccion">
+                <p class="sobrelinea">PON A PRUEBA LO QUE APRENDISTE</p>
+                <h2>Trivia: ¿Qué tanto sabes?</h2>
+                <p>Selecciona una respuesta en cada pregunta.</p>
+            </div>
+            <form class="formulario" action="#" method="get">
+                <fieldset class="pregunta">
+                    <legend>1. ¿Qué característica distingue al bullying de un conflicto ocasional?</legend>
+                    <label class="opcion"><input type="radio" name="pregunta1" value="repeticion" required> Es una conducta agresiva que se repite y existe desigualdad de poder.</label>
+                    <label class="opcion"><input type="radio" name="pregunta1" value="desacuerdo"> Es cualquier desacuerdo entre dos personas.</label>
+                    <label class="opcion"><input type="radio" name="pregunta1" value="broma"> Siempre es una broma sin consecuencias.</label>
+                </fieldset>
+
+                <fieldset class="pregunta">
+                    <legend>2. ¿Cuál es un ejemplo de ciberacoso?</legend>
+                    <label class="opcion"><input type="radio" name="pregunta2" value="tarea" required> Compartir apuntes de clase.</label>
+                    <label class="opcion"><input type="radio" name="pregunta2" value="hostigar"> Enviar mensajes repetidos para humillar o amenazar a alguien.</label>
+                    <label class="opcion"><input type="radio" name="pregunta2" value="saludo"> Saludar a un compañero en línea.</label>
+                </fieldset>
+
+                <fieldset class="pregunta">
+                    <legend>3. ¿Qué puedes hacer si presencias una situación de acoso?</legend>
+                    <label class="opcion"><input type="radio" name="pregunta3" value="grabar" required> Grabarla y compartirla para que todos la vean.</label>
+                    <label class="opcion"><input type="radio" name="pregunta3" value="ignorar"> Ignorar siempre lo que sucede.</label>
+                    <label class="opcion"><input type="radio" name="pregunta3" value="avisar"> Escuchar, apoyar y avisar a una persona adulta de confianza.</label>
+                </fieldset>
+
+                <fieldset class="pregunta">
+                    <legend>4. ¿A quién puedes acudir para pedir apoyo?</legend>
+                    <label class="opcion"><input type="radio" name="pregunta4" value="adulto" required> A un docente, orientador o adulto de confianza.</label>
+                    <label class="opcion"><input type="radio" name="pregunta4" value="nadie"> A nadie, porque es mejor guardarlo.</label>
+                    <label class="opcion"><input type="radio" name="pregunta4" value="agresor"> A la persona que está acosando para enfrentarla sin apoyo.</label>
+                </fieldset>
+                <button type="submit">Enviar respuestas</button>
+                <p class="nota-formulario">Actividad escolar de reflexión. Esta página no califica ni almacena tus respuestas.</p>
+            </form>
+        </section>
+    </main>
+    <!-- PIE DE PÁGINA: completa tu nombre y conserva las fuentes consultadas. -->
+    <footer class="footer">
+       <p><strong>Alto al Bullying · CBTA 197</strong></p>
+        <p>Elaborado por: <strong>Daniell Alely Ochoa Galvez, Daniela Garcia Rojas y Regina Valeria Peraza Martinez.</strong> · Grupo:3-ATP</p>
+        <p class="fuentes">Fuentes de consulta: UNICEF · UNESCO · Secretaría de Educación Pública.</p>
+        <p>Proyecto escolar informativo · 2026</p>
+    </footer>
+</body>
+</html>

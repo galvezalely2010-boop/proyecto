@@ -1,0 +1,249 @@
+/* =========================================================
+   ALTO AL BULLYING · PANTERAS STEAM CBTA 197
+   Hoja CSS externa compartida por las cuatro páginas.
+   ========================================================= */
+
+/* VARIABLES: cambia aquí los colores generales del sitio. */
+:root {
+    --verde-oscuro: #123f2b;
+    --verde: #218b4b;
+    --verde-claro: #eaf6ed;
+    --azul: #164c83;
+    --amarillo: #f5c928;
+    --blanco: #fff;
+    --texto: #24332b;
+    --gris: #64736a;
+    --fondo: #f5f8f5;
+    --sombra: 0 10px 28px rgba(18, 63, 43, .12);
+}
+
+/* Evita que el padding y los bordes aumenten el ancho real. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.65;
+}
+img { max-width: 100%; }
+h1, h2, h3 { color: var(--verde-oscuro); line-height: 1.2; }
+h2 { font-size: clamp(1.65rem, 3vw, 2.3rem); }
+
+/* ENCABEZADO STICKY: se queda arriba al desplazarse. */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 10px clamp(16px, 4vw, 55px);
+    background: rgba(255,255,255,.97);
+    border-bottom: 4px solid var(--amarillo);
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+.marca { display: flex; align-items: center; gap: 13px; min-width: 230px; }
+.logo {
+    width: 76px; height: 76px; flex: 0 0 76px;
+    border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--azul); background: var(--blanco);
+}
+.marca-texto p { margin: 0; }
+.institucion { color: var(--verde); font-size: .68rem; font-weight: 800; letter-spacing: 1.1px; }
+.nombre-sitio { color: var(--verde-oscuro); font-size: 1.35rem; font-weight: 900; line-height: 1.2; text-decoration: none; }
+.eslogan { color: var(--gris); font-size: .78rem; }
+
+/* MENÚ FLEX: enlaces en fila y página actual resaltada. */
+.menu { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 7px; }
+.menu a {
+    padding: 9px 13px; border-radius: 22px; color: var(--verde-oscuro);
+    font-size: .92rem; font-weight: 700; text-decoration: none;
+    transition: background-color .25s, color .25s, transform .25s;
+}
+.menu a:hover { color: var(--blanco); background: var(--verde); transform: translateY(-2px); }
+.menu a.actual { color: var(--blanco); background: var(--azul); }
+
+/* PORTADA: background-image permite usar una fotografía de fondo. */
+.hero {
+    min-height: 440px; display: flex; align-items: center;
+    padding: 65px clamp(20px, 8vw, 110px); color: var(--blanco);
+    background-image: linear-gradient(90deg, rgba(8,39,25,.88), rgba(8,39,25,.28)), url("../img/portada.jpg");
+    background-size: cover; background-position: center;
+}
+.hero-contenido { max-width: 720px; animation: aparecer .9s ease both; }
+.etiqueta, .sobrelinea { color: var(--verde); font-size: .78rem; font-weight: 900; letter-spacing: 2px; }
+.hero .etiqueta { color: var(--amarillo); }
+.hero h1 { max-width: 700px; margin: 10px 0; color: var(--blanco); font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.05; }
+.hero p { max-width: 620px; font-size: 1.1rem; }
+.boton-enlace {
+    display: inline-block; margin-top: 14px; padding: 12px 23px;
+    border-radius: 30px; background: var(--amarillo); color: var(--verde-oscuro);
+    font-weight: 900; text-decoration: none; transition: transform .25s, box-shadow .25s;
+}
+.boton-enlace:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.2); }
+
+/* SECCIONES: ancho máximo para facilitar la lectura. */
+.seccion { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 55px 0; }
+.texto-centrado, .encabezado-seccion, .titulo-pagina { text-align: center; }
+.texto-centrado { max-width: 850px; }
+.encabezado-seccion { max-width: 760px; margin: 0 auto 28px; }
+.titulo-pagina { padding: 58px 20px 30px; background: linear-gradient(135deg, var(--verde-claro), #fff); border-bottom: 1px solid #d9e9dd; }
+.titulo-pagina h1 { margin: 8px 0; font-size: clamp(2rem, 5vw, 3.2rem); }
+.titulo-pagina p:last-child { max-width: 720px; margin: 0 auto; }
+
+/* GALERÍA GRID: ocho fotos; la primera ocupa dos columnas y dos filas. */
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 15px; }
+.foto { position: relative; overflow: hidden; margin: 0; border-radius: 17px; background: #dcebe0; box-shadow: var(--sombra); }
+.foto-grande { grid-column: span 2; grid-row: span 2; }
+.foto img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.foto:hover img { transform: scale(1.07); }
+.foto figcaption {
+    position: absolute; right: 0; bottom: 0; left: 0; padding: 12px;
+    color: var(--blanco); font-size: .9rem; font-weight: 700;
+    background: linear-gradient(transparent, rgba(0,0,0,.78));
+}
+
+/* TARJETAS y columnas. */
+.tarjetas-inicio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 10px; }
+.tarjeta {
+    padding: 25px; margin: 0 0 18px; border: 1px solid #e0ebe2;
+    border-radius: 18px; background: var(--blanco); box-shadow: var(--sombra);
+}
+.tarjeta h2, .tarjeta h3 { margin-top: 0; }
+.tarjeta a { color: var(--azul); font-weight: 800; text-decoration: none; }
+.tarjeta a:hover { text-decoration: underline; }
+.tarjeta-destacada { border-top: 6px solid var(--amarillo); }
+.lista-con-icono { padding-left: 22px; }
+.lista-con-icono li { margin: 9px 0; }
+.dos-columnas { display: grid; grid-template-columns: .9fr 1.1fr; align-items: start; gap: 25px; }
+.contacto-layout { padding-top: 38px; }
+.aviso { margin-top: 22px; padding: 16px; border-left: 5px solid var(--amarillo); border-radius: 8px; background: var(--verde-claro); }
+
+/* BOTONES DEL INDEX: los enlaces parecen botones y se resaltan al pasar el mouse. */
+.boton-tarjeta {
+    display: inline-block; margin-top: 12px; padding: 10px 18px;
+    border: 2px solid var(--verde); border-radius: 25px;
+    background: var(--verde); color: var(--blanco) !important;
+    font-weight: 800; text-decoration: none !important;
+    transition: background-color .25s, color .25s, transform .25s, box-shadow .25s;
+}
+.boton-tarjeta:hover {
+    background: var(--amarillo); border-color: var(--amarillo);
+    color: var(--verde-oscuro) !important; transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(18,63,43,.2);
+}
+.tarjetas-inicio .tarjeta { transition: transform .25s, box-shadow .25s, border-color .25s; }
+.tarjetas-inicio .tarjeta:hover {
+    transform: translateY(-6px); border-color: var(--verde);
+    box-shadow: 0 15px 30px rgba(18,63,43,.18);
+}
+
+/* TARJETAS DE TIPOS DE ACOSO Y ACCIONES DE PARTICIPA. */
+.bloque-tipos { margin: 12px 0 25px; }
+.bloque-tipos > h2 { margin-bottom: 18px; }
+.rejilla-tarjetas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.tipo-tarjeta, .mini-tarjeta {
+    position: relative; margin: 0; border-top: 5px solid var(--verde);
+    transition: transform .25s, box-shadow .25s;
+}
+.tipo-tarjeta:hover, .mini-tarjeta:hover { transform: translateY(-5px); box-shadow: 0 15px 28px rgba(18,63,43,.17); }
+.numero-tarjeta { display: inline-block; margin-bottom: 8px; color: var(--verde); font-size: .8rem; font-weight: 900; letter-spacing: 2px; }
+.tipo-tarjeta h3, .mini-tarjeta h3 { margin: 0 0 8px; }
+.tipo-tarjeta p, .mini-tarjeta p { margin: 0; }
+.ayuda-contenedor { padding: 22px; }
+.ayuda-contenedor > h2 { margin-bottom: 18px; }
+.ayuda-tarjetas .mini-tarjeta { background: #fbfdfb; }
+
+/* FORMULARIOS: campos de ancho completo dentro de una tarjeta. */
+.formulario {
+    width: 100%; padding: clamp(20px, 4vw, 34px);
+    border: 1px solid #dce9df; border-radius: 18px;
+    background: var(--blanco); box-shadow: var(--sombra);
+}
+.formulario h2 { margin-top: 0; }
+.formulario > label { display: block; margin: 17px 0 7px; color: var(--verde-oscuro); font-weight: 800; }
+.formulario input[type="text"], .formulario input[type="email"],
+.formulario input[type="number"], .formulario input[type="date"],
+.formulario select, .formulario textarea {
+    display: block; width: 100%; max-width: 100%; padding: 12px 14px;
+    border: 1px solid #bdcfc2; border-radius: 10px;
+    background: #fbfdfb; color: var(--texto); font: inherit;
+}
+/* Pseudo-elemento para el color del texto de ejemplo. */
+.formulario input::placeholder, .formulario textarea::placeholder { color: #829188; opacity: 1; }
+/* :focus resalta el campo seleccionado. */
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus {
+    outline: 3px solid rgba(33,139,75,.2); border-color: var(--verde); background: #fff;
+}
+.formulario textarea { min-height: 125px; resize: vertical; }
+.pregunta { min-width: 0; margin: 22px 0; padding: 17px; border: 1px solid #dce9df; border-radius: 12px; }
+.pregunta legend { padding: 0 7px; color: var(--verde-oscuro); font-weight: 800; }
+.opcion { display: flex; align-items: flex-start; gap: 10px; margin: 11px 0; cursor: pointer; }
+.opcion input { flex: 0 0 auto; margin-top: 6px; accent-color: var(--verde); }
+.formulario button {
+    display: inline-block; margin-top: 18px; padding: 13px 24px;
+    border: 0; border-radius: 28px; background: var(--verde); color: var(--blanco);
+    font: inherit; font-weight: 900; cursor: pointer;
+    transition: background-color .25s, transform .25s, box-shadow .25s;
+}
+.formulario button:hover { background: var(--azul); transform: translateY(-2px); box-shadow: 0 7px 15px rgba(22,76,131,.2); }
+.nota-formulario { margin-bottom: 0; color: var(--gris); font-size: .85rem; }
+
+/* FUENTES EN CONTACTO: texto más grande y sin subrayado azul. */
+.fuentes-detalle { padding-top: 5px; }
+.fuentes-detalle ul { padding-left: 24px; }
+.fuentes-detalle li { margin: 14px 0; font-size: 1.08rem; line-height: 1.7; }
+.fuentes-detalle a, .fuentes-detalle a:visited {
+    color: var(--verde-oscuro); font-size: 1.08rem; font-weight: 800;
+    text-decoration: none; border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+.fuentes-detalle a:hover { color: var(--verde); text-decoration: none; border-bottom-color: var(--amarillo); }
+
+/* MENSAJE DE AYUDA: va antes del pie de página en las cuatro páginas. */
+.linea-ayuda { padding: 23px 10px; background: var(--azul); color: var(--blanco); text-align: center; }
+.linea-ayuda p { max-width: 700px; margin: 5px auto; }
+.linea-ayuda h2 { margin: 6px 0; color: var(--amarillo); font-size: clamp(1.2rem, 3vw, 1.3rem); }
+.telefono { display: inline-block; color: var(--blanco); font-size: clamp(1.5rem, 4vw, 1.7rem); font-weight: 800; text-decoration: none; }
+
+/* FOOTER con nombre del alumno y fuentes. */
+.footer { padding: 25px 18px; background: var(--verde-oscuro); color: #e9f4ec; text-align: center; font-size: .9rem; }
+.footer p { margin: 5px; }
+.fuentes { color: #c7ddce; }
+
+/* ANIMACIÓN de entrada. */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE: tablet. */
+@media (max-width: 900px) {
+    .encabezado { flex-direction: column; gap: 8px; }
+    .marca { justify-content: center; }
+    .menu { justify-content: center; }
+    .galeria { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .tarjetas-inicio { grid-template-columns: 1fr 1fr; }
+}
+
+/* RESPONSIVE: celular, menú vertical y galerías de dos columnas. */
+@media (max-width: 600px) {
+    .encabezado { position: relative; padding: 12px; }
+    .marca { min-width: 0; }
+    .logo { width: 64px; height: 64px; flex-basis: 64px; }
+    .nombre-sitio { font-size: 1.15rem; }
+    .menu { width: 100%; flex-direction: column; gap: 3px; }
+    .menu a { width: 100%; text-align: center; }
+    .hero { min-height: 390px; padding: 45px 22px; }
+    .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 145px; gap: 9px; }
+    .foto-grande { grid-column: span 2; grid-row: span 2; }
+    .foto figcaption { padding: 8px; font-size: .75rem; }
+    .tarjetas-inicio, .dos-columnas, .rejilla-tarjetas { grid-template-columns: 1fr; }
+    .seccion { width: min(100% - 26px, 1120px); padding: 36px 0; }
+    .formulario { padding: 19px; }
+    .ayuda-contenedor { padding: 17px; }
+    .fuentes-detalle li, .fuentes-detalle a, .fuentes-detalle a:visited { font-size: 1rem; }
+}

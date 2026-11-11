@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica para que la página use caracteres en español y se adapte al celular. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio escolar para informar, prevenir y combatir el bullying y el acoso escolar.">
+    <title>Participa | Alto al Bullying</title>
+    <!-- Las cuatro páginas comparten esta misma hoja de estilos externa. -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ENCABEZADO: el logo se muestra redondo y junto al nombre del sitio. -->
+    <header class="encabezado">
+        <div class="marca">
+            <!-- Cambia img/logo.png si deseas usar otro archivo de logo. -->
+            <img class="logo" src="img/logo.png" alt="Logotipo de Panteras STEAM CBTA 197">
+            <div class="marca-texto">
+                <p class="institucion">CBTA 197 · PANTERAS STEAM</p>
+                <a class="nombre-sitio" href="index.html">Alto al Bullying</a>
+                <p class="eslogan">Tu espacio, tu voz, tu respeto.</p>
+            </div>
+        </div>
+
+        <!-- MENÚ PRINCIPAL: los mismos enlaces aparecen en las cuatro páginas. -->
+        <nav class="menu" aria-label="Menú principal">
+                <a href="index.html" class="" >Inicio</a>
+                <a href="informacion.html" class="" >Información</a>
+                <a href="participa.html" class="actual" aria-current="page">Participa</a>
+                <a href="contacto.html" class="" >Contáctanos</a>
+        </nav>
+    </header>
+    <main>
+        <!-- PRESENTACIÓN DE LA PÁGINA PARTICIPA. -->
+        <section class="titulo-pagina">
+            <p class="sobrelinea">TU OPINIÓN IMPORTA</p>
+            <h1>Participa y propón el cambio</h1>
+            <p>Contestar esta encuesta te ayudará a reflexionar sobre cómo podemos mejorar la convivencia escolar.</p>
+        </section>
+
+        <!-- IDEAS PARA PARTICIPAR: acciones concretas y seguras. -->
+        <section class="seccion dos-columnas">
+            <!-- Las acciones para ayudar se muestran en cuatro tarjetas separadas. -->
+            <article class="tarjeta ayuda-contenedor">
+                <h2>¿Cómo puedes ayudar?</h2>
+                <div class="rejilla-tarjetas ayuda-tarjetas">
+                    <article class="tarjeta mini-tarjeta"><h3>Respeta</h3><p>Trata a tus compañeros con respeto, incluso cuando piensen diferente.</p></article>
+                    <article class="tarjeta mini-tarjeta"><h3>No difundas</h3><p>No compartas rumores, burlas ni publicaciones ofensivas.</p></article>
+                    <article class="tarjeta mini-tarjeta"><h3>Incluye</h3><p>Invita a participar a quienes suelen quedarse fuera del grupo.</p></article>
+                    <article class="tarjeta mini-tarjeta"><h3>Busca apoyo</h3><p>Si ves acoso, apoya a la persona y avisa a un adulto de confianza.</p></article>
+                </div>
+            </article>
+            <article class="tarjeta tarjeta-destacada">
+                <h2>Una comunidad que escucha</h2>
+                <p>Prevenir el bullying no es responsabilidad de una sola persona. Estudiantes, familias y personal escolar pueden colaborar para crear espacios seguros.</p>
+                <p>Tu opinión puede aportar ideas para construir una mejor convivencia.</p>
+            </article>
+        </section>
+
+        <!-- FORMULARIO 2: incluye select, checkbox, number, date y textarea.
+             Los checkbox permiten marcar más de una acción. -->
+        <section class="seccion">
+            <div class="encabezado-seccion">
+                <p class="sobrelinea">ENCUESTA ESCOLAR</p>
+                <h2>Comparte tus ideas</h2>
+            </div>
+            <form class="formulario" action="#" method="get">
+                <label for="nombre-participa">1. ¿Cómo te gustaría que te llamemos?</label>
+                <input type="text" id="nombre-participa" name="nombre" placeholder="Escribe tu nombre o un apodo" required>
+
+                <label for="definicion">2. Para ti, ¿qué es el bullying?</label>
+                <select id="definicion" name="definicion" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="agresion-repetida">Una agresión que se repite y busca dañar o intimidar.</option>
+                    <option value="desacuerdo">Cualquier diferencia de opinión.</option>
+                    <option value="broma">Una broma que siempre es inofensiva.</option>
+                    <option value="no-se">No estoy seguro/a.</option>
+                </select>
+
+                <fieldset class="pregunta">
+                    <legend>3. ¿Qué acciones ayudarían a prevenir el bullying? (Puedes elegir varias).</legend>
+                    <label class="opcion"><input type="checkbox" name="acciones" value="respeto"> Promover el respeto entre compañeros.</label>
+                    <label class="opcion"><input type="checkbox" name="acciones" value="reportar"> Avisar a un adulto de confianza cuando ocurre.</label>
+                    <label class="opcion"><input type="checkbox" name="acciones" value="incluir"> Incluir a quienes son excluidos.</label>
+                    <label class="opcion"><input type="checkbox" name="acciones" value="no-compartir"> No compartir contenido que humille a alguien.</label>
+                </fieldset>
+
+                <label for="frecuencia">4. ¿Con qué frecuencia consideras importante hablar de convivencia escolar?</label>
+                <select id="frecuencia" name="frecuencia" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="cada-semana">Cada semana</option>
+                    <option value="cada-mes">Cada mes</option>
+                    <option value="cada-parcial">Cada parcial</option>
+                    <option value="cuando-se-necesite">Cuando sea necesario</option>
+                </select>
+
+                <label for="edad">Edad (opcional)</label>
+                <input type="number" id="edad" name="edad" min="10" max="100" placeholder="Ej. 16">
+
+                <label for="fecha">Fecha en que respondes (opcional)</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="propuesta">5. ¿Tú cómo ayudarías a combatir el bullying en tu escuela?</label>
+                <textarea id="propuesta" name="propuesta" rows="5" placeholder="Escribe tu propuesta o reflexión..." required></textarea>
+
+                <button type="submit">Enviar mi participación</button>
+                <p class="nota-formulario">No escribas datos personales sensibles. Las respuestas no se guardan en este sitio.</p>
+            </form>
+        </section>
+    </main>
+    <!-- PIE DE PÁGINA: completa tu nombre y conserva las fuentes consultadas. -->
+    <footer class="footer">
+        <p><strong>Alto al Bullying · CBTA 197</strong></p>
+        <p>Elaborado por: <strong>Daniell Alely Ochoa Galvez, Daniela Garcia Rojas y Regina Valeria Peraza Martinez.</strong> · Grupo:3-ATP</p>
+        <p class="fuentes">Fuentes de consulta: UNICEF · UNESCO · Secretaría de Educación Pública.</p>
+        <p>Proyecto escolar informativo · 2026</p>
+    </footer>
+</body>
+</html>
